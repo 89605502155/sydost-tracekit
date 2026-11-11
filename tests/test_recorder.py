@@ -165,3 +165,47 @@ def test_real_proc_for_two_seconds_at_ten_hz(tmp_path):
     summary = record(str(out), hz=10.0, duration=1.0)
     assert summary["samples"] >= 5
     assert summary["cpu_share"] < 0.5
+
+
+def test_overdue_tick_is_run_once_and_not_skipped(fake_proc, tmp_path):
+    """A sample that ends 0.16 s after tick 0 (period 0.1 s) must run tick 1 at once, late."""
+    clk = FakeClock()
+    calls = {"sample": 0}
+    real_sample = ProcReader.sample
+
+    def slow_first_sample(self):
+        calls["sample"] += 1
+        if calls["sample"] == 1:
+            clk.t += 0.16
+        return real_sample(self)
+
+    ProcReader.sample = slow_first_sample  # type: ignore[method-assign]
+    try:
+        summary = record(
+            str(tmp_path / "t.csv"),
+            hz=10.0,
+            duration=0.3,
+            root=str(fake_proc),
+            clock=clk,
+            sleep=clk.sleep,
+        )
+    finally:
+        ProcReader.sample = real_sample  # type: ignore[method-assign]
+    assert summary["skipped"] == 0  # tick 1 is 0.06 s late: run, not skipped
+    assert summary["late"] == 1
+    assert summary["samples"] == 3  # ticks 0, 1 (late), 2 (at 0.2 s)
+
+
+def test_same_tick_is_never_sampled_twice(fake_proc, tmp_path):
+    """Every sample is written at a distinct tick: the schedule never goes back."""
+    clk = FakeClock()
+    summary = record(
+        str(tmp_path / "t.csv"),
+        hz=20.0,
+        duration=0.5,
+        root=str(fake_proc),
+        clock=clk,
+        sleep=clk.sleep,
+    )
+    assert summary["samples"] == 10
+    assert summary["skipped"] == 0

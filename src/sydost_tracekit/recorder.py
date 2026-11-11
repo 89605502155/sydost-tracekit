@@ -207,9 +207,11 @@ def record(
                     late += 1
                 if n % flush_every == 0:
                     fh.flush()
-                # next tick strictly after the end of this sample; the epsilon guards rounding
+                # The next tick is the first one not yet behind by a whole period: a tick that
+                # is overdue by less than a period is run at once (not skipped), a tick of the
+                # current period is never sampled twice (next_k > k). The epsilon guards rounding.
                 done = clock() - start
-                next_k = max(k + 1, math.floor(done / period + 1e-9) + 1)
+                next_k = max(k + 1, math.floor(done / period + 1e-9))
                 skipped += next_k - (k + 1)
                 k = next_k
         finally:
