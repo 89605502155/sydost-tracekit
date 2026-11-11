@@ -13,7 +13,7 @@
 | Границы | `hold_error_bound`, `hold_error_bounds_refined`, `linear_error_bound`, `estimate_constants`, `Constants`, `required_step`, `plan_sampling`, `Plan` | априорные и уточнённые границы, план опроса |
 | Повтор | `ReserveController`, `simulate`, `RunResult` | повтор контроллера при постоянном опросе |
 | Настройка | `sweep`, `pareto_front`, `select` | фронт «стоимость — качество» и выбор |
-| Синтетика | `synthetic_trace`, `VmProfile`, `SCENARIOS` | сценарии A, B, C для отладки |
+| Синтетика | `synthetic_trace`, `VmProfile`, `SCENARIOS` | сценарии A, B, C (совпадают с прототипом при том же зерне); D — контрольная |
 | Гость | `sydost_tracekit.recorder.record`, `main` | регистратор на стандартной библиотеке (он же файл для гостей) |
 | Хост | `sydost_tracekit.collector.collect`, `connect` | сборщик libvirt (дополнение `kvm`) |
 

@@ -13,7 +13,7 @@ docstring with runnable examples.
 | Bounds | `hold_error_bound`, `hold_error_bounds_refined`, `linear_error_bound`, `estimate_constants`, `Constants`, `required_step`, `plan_sampling`, `Plan` | a-priori and refined bounds, sampling plan |
 | Replay | `ReserveController`, `simulate`, `RunResult` | controller replay with fixed polling |
 | Tuning | `sweep`, `pareto_front`, `select` | cost–quality front and selection |
-| Synthetic | `synthetic_trace`, `VmProfile`, `SCENARIOS` | scenarios A, B, C for debugging |
+| Synthetic | `synthetic_trace`, `VmProfile`, `SCENARIOS` | scenarios A, B, C (identical to the prototype for the same seed); D held out |
 | Guest | `sydost_tracekit.recorder.record`, `main` | stdlib recorder (also the file copied to guests) |
 | Host | `sydost_tracekit.collector.collect`, `connect` | libvirt collector (extra `kvm`) |
 
