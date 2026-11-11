@@ -1,12 +1,13 @@
 [project]
 name = "sydost-tracekit"
-version = "0.1.0"
+version = "0.0.1"
 description = "Reference memory traces of virtual machines and accuracy of accumulated-deficit estimates from samples: stdlib guest recorder, libvirt collector, error bounds, tuning by Pareto front"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [
     { name = "Andrey Ferubko", email = "ferubko1999@yandex.ru" },
+    { name = "Oleg Kazakov", email = "kazakov@bgitu.ru" },
 ]
 requires-python = ">=3.11"
 keywords = [

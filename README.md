@@ -11,7 +11,9 @@ for a step ℓ define a simple function, so the estimate converges to `D` as ℓ
 The library gives explicit error bounds: `ℓ·V(d)` for holding the samples (first order)
 and `ℓ²·(T·M/12 + K·L/3)` for linear interpolation (second order).
 
-Developed at Bryansk State Engineering-Technological University (BGITU), by Andrey Ferubko.
+Developed at Bryansk State Engineering-Technological University (BGITU) by Andrey Ferubko
+([ORCID](https://orcid.org/0009-0006-5625-137X)) and Oleg Kazakov
+([ORCID](https://orcid.org/0000-0001-9665-8138)).
 
 ## Install
 
@@ -96,9 +98,9 @@ Heavy experiments (minutes of recording at 100 Hz) are in [experiments](experime
 
 ## Citation
 
-See [CITATION.cff](CITATION.cff). Author: Andrey Ferubko, ferubko1999@yandex.ru,
-Bryansk State Engineering-Technological University (BGITU).
+See [CITATION.cff](CITATION.cff). Authors: Andrey Ferubko (ferubko1999@yandex.ru) and
+Oleg Kazakov (kazakov@bgitu.ru), Bryansk State Engineering-Technological University (BGITU).
 
 ## License
 
-MIT, see [LICENSE](LICENSE). Copyright (c) 2026 Andrey Ferubko.
+MIT, see [LICENSE](LICENSE). Copyright (c) 2026 Andrey Ferubko, Oleg Kazakov.

@@ -3,10 +3,14 @@
 All notable changes of sydost-tracekit are documented here. The project follows
 [Semantic Versioning](https://semver.org).
 
-## 0.1.0 — 2026-11-11
+## [0.0.1] — 2026-11-11
 
 First release: reference memory traces of virtual machines and the accuracy of the
-accumulated-deficit estimate from samples (A. Ferubko, BGITU).
+accumulated-deficit estimate from samples (A. Ferubko, O. Kazakov, BGITU).
+
+* Recorder: the tick after a sample is the first one not behind by a whole period; an overdue
+  tick is run once, a tick is never sampled twice.
+* `synthetic`: scenarios A, B, C reproduce the prototype arrays bit for bit; held-out scenario D.
 
 * `recorder`: the guest recorder, Python standard library only, one file; drift-free
   schedule, late and skipped tick accounting, CPU share of the recorder.
@@ -22,6 +26,5 @@ accumulated-deficit estimate from samples (A. Ferubko, BGITU).
   `plan_sampling` (the sampling rate for a target error).
 * `replay`, `tune`: controller replay with fixed polling, Pareto front and selection under
   `P(θ) ≤ α` and `D ≤ D_max`.
-* `synthetic`: scenarios A, B, C for debugging.
 * Command line `sydost-tracekit record | integrate | bound | tune`.
 * Documentation in English and Russian, seven examples, tests with coverage.

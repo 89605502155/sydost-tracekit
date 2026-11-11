@@ -52,7 +52,7 @@ from .synthetic import SCENARIOS, VmProfile, synthetic_trace
 from .trace import Trace, TraceFormatError, load_trace, save_trace
 from .tune import pareto_front, select, sweep
 
-__version__ = "0.1.0"
+__version__ = "0.0.1"
 
 __all__ = [
     "SCENARIOS",
