@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "sydost-tracekit: reference memory traces of virtual machines and accuracy of accumulated-deficit estimates from samples"
+abstract: >-
+  A Python library for recording reference memory traces of virtual machines (a
+  stdlib-only guest recorder and a libvirt host collector), for estimating the
+  accumulated memory deficit from samples with explicit error bounds (hold and
+  linear reconstruction, refined hold bound, exact integral of the positive part),
+  for choosing a sampling rate for a target error, and for tuning the monitoring
+  configuration by a Pareto front.
+version: 0.1.0
+date-released: 2026-11-11
+license: MIT
+repository-code: "https://github.com/89605502155/sydost-tracekit"
+url: "https://github.com/89605502155/sydost-tracekit"
+keywords:
+  - memory trace
+  - virtualization
+  - KVM
+  - libvirt
+  - sampling
+  - accumulated deficit
+  - error bound
+  - monitoring
+authors:
+  - family-names: Ferubko
+    given-names: Andrey
+    email: ferubko1999@yandex.ru
+    affiliation: "Bryansk State Engineering-Technological University (BGITU)"
