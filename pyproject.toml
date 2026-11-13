@@ -1,6 +1,6 @@
 [project]
 name = "sydost-tracekit"
-version = "0.0.1"
+version = "0.0.2"
 description = "Reference memory traces of virtual machines and accuracy of accumulated-deficit estimates from samples: stdlib guest recorder, libvirt collector, error bounds, tuning by Pareto front"
 readme = "README.md"
 license = "MIT"

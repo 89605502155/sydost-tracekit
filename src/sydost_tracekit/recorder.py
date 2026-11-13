@@ -2,7 +2,7 @@
 """Guest memory recorder: Python standard library only, one file.
 
 The file is copied into a guest virtual machine as it is and run with
-Python 3.8 or newer::
+Python 3.11 to 3.14, the versions on which the library tests run (older ones are not tested)::
 
     python3 recorder.py --hz 10 --duration 7200 --out trace_vm1.csv
 

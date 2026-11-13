@@ -3,6 +3,11 @@
 All notable changes of sydost-tracekit are documented here. The project follows
 [Semantic Versioning](https://semver.org).
 
+## [0.0.2] — 2026-11-14
+
+Documentation fix: the guest recorder is stated to be tested on Python 3.11 to 3.14 (the versions
+of the library tests); the earlier claim of Python 3.8 was not checked. No change of behaviour.
+
 ## [0.0.1] — 2026-11-11
 
 First release: reference memory traces of virtual machines and the accuracy of the

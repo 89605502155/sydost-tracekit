@@ -1,7 +1,7 @@
 # Recorder deployment
 
 The guest recorder is one Python file with the standard library only:
-`src/sydost_tracekit/recorder.py`. It runs on Python 3.8 or newer and reads the Linux procfs.
+`src/sydost_tracekit/recorder.py`. It is tested on Python 3.11 to 3.14, the versions on which the library tests run; older versions are not tested. It reads the Linux procfs.
 
 ## Steps
 
